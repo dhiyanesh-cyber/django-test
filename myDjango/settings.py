@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 REST_FRAMEWORK = {
        'DEFAULT_PERMISSION_CLASSES': (
@@ -34,9 +35,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-#+b4bm7=)*2faxbvrtaw_f$!_u2k8ny$$&g+8eoxm51@gt#rff"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*',"0.0.0.0", "192.168.56.1"]
+ALLOWED_HOSTS = ["localhost", "docspot..pythonanywhere.com"]
 
 
 
@@ -94,7 +95,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST': '192.168.56.1',  # Typically 'localhost' for local development
+        'HOST': 'localhost',  # Typically 'localhost' for local development
         'PORT': '5432',  # Typically '5432' for PostgreSQL
     }
 }
@@ -135,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
