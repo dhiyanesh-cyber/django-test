@@ -36,7 +36,7 @@ SECRET_KEY = "django-insecure-#+b4bm7=)*2faxbvrtaw_f$!_u2k8ny$$&g+8eoxm51@gt#rff
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*',"0.0.0.0", "192.168.56.1"]
 
 
 
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "myapp",
+    "getDoctors",
 ]
 
 MIDDLEWARE = [
@@ -88,9 +89,13 @@ WSGI_APPLICATION = "myDjango.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': '192.168.56.1',  # Typically 'localhost' for local development
+        'PORT': '5432',  # Typically '5432' for PostgreSQL
     }
 }
 
