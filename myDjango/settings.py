@@ -37,7 +37,7 @@ SECRET_KEY = "django-insecure-#+b4bm7=)*2faxbvrtaw_f$!_u2k8ny$$&g+8eoxm51@gt#rff
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "docspot..pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost", "docspot..pythonanywhere.com","*"]
 
 
 
