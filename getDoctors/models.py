@@ -8,3 +8,4 @@ class Doctor(models.Model):
     
     class Meta:
         db_table = 'doctor_list'
+
